@@ -1,0 +1,51 @@
+<json-config>
+
+	<custom-validator class="com.json.validations.custom.PatternValidator" alias="pattern"/>
+
+	<json-heirarchy path="root">
+		<KeyValues>
+			<KeyValue name="ROOT" valueType="JSON_ARRAY"/>
+			<KeyValue index="0" valueType="JSON"/>
+			<KeyValue index="1" valueType="JSON"/>
+			<KeyValue index="3" valueType="DOUBLE"/>
+		</KeyValues>
+	</json-heirarchy>
+
+	<json-heirarchy path="root[0]">
+		<KeyValues>
+			<KeyValue index="key1" valueType="JSON_ARRAY"/>
+			<KeyValue index="key2" valueType="JSON_ARRAY"/>
+		</KeyValues>
+	</json-heirarchy>
+
+	<json-heirarchy path="root[2]">
+		<KeyValues>
+			<KeyValue index="default" valueValidator="pattern"/>
+		</KeyValues>
+	</json-heirarchy>
+	
+	<json-heirarchy path="root[1]">
+		<KeyValues>
+			<KeyValue index="key-rajesh" valueType="JSON"/>
+		</KeyValues>
+	</json-heirarchy>	
+	
+	<json-heirarchy path="root[0]/key1">
+		<KeyValues>
+			<KeyValue index="0" valueType="DOUBLE"/>
+			<KeyValue index="1" valueType="BOOLEAN"/>
+		</KeyValues>
+	</json-heirarchy>
+	
+	<json-heirarchy path="root[0]/key2[0]">
+		<KeyValues>
+			<KeyValue name="default" valueValidator="pattern"/>
+		</KeyValues>
+	</json-heirarchy>	
+	
+	<json-heirarchy path="root[1]/key-rajesh">
+		<KeyValues>
+			<KeyValue name="default" valueType="STRING"/>
+		</KeyValues>
+	</json-heirarchy>	
+</json-config>

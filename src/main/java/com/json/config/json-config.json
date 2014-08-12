@@ -1,0 +1,26 @@
+{
+	"root":{
+		"ROOT":{valueType:"JSON"},
+		"a":{valueType:"JSON"},
+		"b":{valueType:"JSON"},
+		"c":{valueType:"STRING_LITERAL"},
+		"d":{valueType:"DOUBLE"}
+	},
+	"root/a":{
+		"key1":{valueType:"JSON_ARRAY"},
+		"key2":{valueType:"JSON_ARRAY"}
+	},
+	"root/b":{
+		"key":{valueType:"JSON"}
+	},
+	"root/a/key1":{
+		"0":{valueType:"DOUBLE"},
+		"1":{valueType:"BOOLEAN"}
+	},
+	"root/a/key2":{
+		"default":{valueType:"STRING"}
+	},
+	"root/b/key":{
+		"default":{valueType:"STRING"}
+	}
+}
