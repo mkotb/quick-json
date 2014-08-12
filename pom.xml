@@ -11,11 +11,6 @@
     <name>quick-json</name>
     <url>https://code.google.com/p/quick-json/</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <github.global.server>github</github.global.server>
-    </properties>
-
     <distributionManagement>
         <repository>
             <id>internal.repo</id>
@@ -24,35 +19,29 @@
         </repository>
     </distributionManagement>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                    </configuration>
-                </plugin>
+    <properties>
+        <github.global.server>github</github.global.server>
+    </properties>
 
-                <plugin>
-                   <groupId>com.github.github</groupId>
-                   <artifactId>site-maven-plugin</artifactId>
-                   <version>0.8</version>
-                   <configuration>
-                      <message>Maven artifacts for ${project.version}</message>
-                      <noJekyll>true</noJekyll>
-                      <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                      <branch>refs/heads/mvn-repo</branch>
-                      <merge>true</merge>
-                      <includes>
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.8</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <branch>refs/heads/mvn-repo</branch>
+                    <merge>true</merge>
+                    <includes>
                         <include>**/*</include>
-                      </includes>
+                    </includes>
                     <repositoryName>quick-json</repositoryName>
                     <repositoryOwner>mazentheamazin</repositoryOwner>
-                   </configuration>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -61,10 +50,19 @@
                         <phase>deploy</phase>
                     </execution>
                 </executions>
-             </plugin>
+            </plugin>
 
-            </plugins>
-        </pluginManagement>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
 
         <finalName>${project.name}</finalName>
 
